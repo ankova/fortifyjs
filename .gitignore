@@ -1,0 +1,69 @@
+# ───────────────────────────────
+# Node / TypeScript / React Ignore
+# ───────────────────────────────
+
+# dependencies
+node_modules/
+.pnpm-store/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# build output
+dist/
+build/
+lib/
+coverage/
+*.tsbuildinfo
+
+# temporary files
+.tmp/
+.temp/
+.cache/
+.eslintcache
+
+# test / coverage
+coverage/
+.vitest/
+jest-html-reporters-*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# env files
+.env
+.env.*
+!.env.example
+
+# storybook / demo apps
+storybook-static/
+examples/react-demo/.next/
+examples/react-demo/out/
+examples/react-demo/.vercel/
+
+# build artefacts from docs or static site generators
+docs/.vitepress/dist/
+.docusaurus/
+
+# local builds
+*.tgz
+*.local.js
+
+# lock CI secrets or local credentials
+*.key
+*.pem
+*.crt
+
+# Optional: OS-specific junk
+*.orig

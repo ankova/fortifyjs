@@ -1,0 +1,60 @@
+# ───────────────────────────────
+# Universal Git Attributes
+# ───────────────────────────────
+
+# Ensure consistent LF line endings for all text files
+* text=auto eol=lf
+
+# ───────────────────────────────
+# TypeScript / JavaScript
+# ───────────────────────────────
+
+*.ts text diff=typescript
+*.tsx text diff=typescript
+*.js text diff=javascript
+*.jsx text diff=javascript
+*.mjs text diff=javascript
+*.cjs text diff=javascript
+
+# ───────────────────────────────
+# JSON / Config / Data Files
+# ───────────────────────────────
+
+*.json text
+*.yaml text
+*.yml text
+*.toml text
+
+# ───────────────────────────────
+# Markdown / Documentation
+# ───────────────────────────────
+
+*.md text diff=markdown
+*.mdx text diff=markdown
+*.txt text
+LICENSE text
+CHANGELOG.md text
+
+# ───────────────────────────────
+# Build Artifacts / Binary Files
+# ───────────────────────────────
+
+# Treat binaries as binary (no diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.mp4 binary
+*.pdf binary
+*.zip binary
+*.tgz binary
+
+# ───────────────────────────────
+# OS / IDE / Misc
+# ───────────────────────────────
+
+*.log text
+*.sh text eol=lf
+*.bat text eol=crlf

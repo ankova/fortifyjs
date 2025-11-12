@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "lib": ["ES2020", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@fortifyjs/core": ["packages/core/src/index.ts"],
+      "@fortifyjs/http": ["packages/http/src/index.ts"],
+      "@fortifyjs/react": ["packages/react/src/index.ts"]
+    }
+  },
+  "include": ["packages"]
+}
