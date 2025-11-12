@@ -2,21 +2,35 @@
   "name": "@fortifyjs/http",
   "version": "0.0.1",
   "description": "Typed HTTP client with schema validation, retries, and safe error handling.",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
     }
   },
   "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "test": "vitest --run"
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "zod": "^3.23.8"
@@ -24,11 +38,16 @@
   "peerDependencies": {
     "@fortifyjs/core": "workspace:*"
   },
-  "devDependencies": {
-    "@fortifyjs/core": "workspace:*",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.4"
+  "peerDependenciesMeta": {
+    "@fortifyjs/core": {
+      "optional": false
+    }
   },
-  "license": "MIT"
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

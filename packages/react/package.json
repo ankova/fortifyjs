@@ -1,21 +1,58 @@
 {
   "name": "@fortifyjs/react",
   "version": "0.0.1",
+  "description": "React bindings for FortifyJS (GuardBoundary, hooks, feature flags).",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "peerDependencies": {
-    "react": ">=18.2.0",
-    "react-dom": ">=18.2.0",
-    "@fortifyjs/core": "workspace:*"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    }
   },
-  "devDependencies": {
-    "@fortifyjs/core": "workspace:*",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts"
-  }
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 || ^19.0.0",
+    "react-dom": ">=18.2.0 || ^19.0.0",
+    "@fortifyjs/core": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@fortifyjs/core": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@fortifyjs/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "error-boundary",
+    "feature-flags",
+    "safe-async"
+  ]
 }
